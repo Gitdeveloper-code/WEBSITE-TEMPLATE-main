@@ -3,18 +3,23 @@ import Hero from "../components/Hero"
 import { THREADING, WAXING } from "../constants"
 
 
-const getServices= async()=> {
-  let response= await fetch("http://localhost:3000/api/services", {cache:"no-store"})
-  if (!response.ok){
-    throw new Error(`HTTP error! Status: ${response.status}`);
-    return {res:"Error"}
+const getServices = async () => {
+  try {
+    const response = await fetch("http://localhost:3000/api/services", { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching services:", error);
+    return { res: "Error" };
   }
-  else{
-    let data= await response.json()
-    return data
-  }
-  
-}
+};
+
+
 
 const page =async () => {
 
@@ -24,19 +29,17 @@ const page =async () => {
 
   
  
-  const services = [
-    { path: "/asset/img/service1.png", title: THREADING.title, details: servicesApi.result.filter((item: {category:string})=> item.category=== 'Threading').map((item: {category:string})=> item) },
-    { path: "/asset/img/service10.png", title: WAXING.title, details:servicesApi.result.filter((item: {category:string})=> item.category=== 'Waxing').map((item: {category:string})=> item)  },
-    { path: "/asset/img/service3.png", title: "SUGAR EPILATION", details: servicesApi.result.filter((item: {category:string})=> item.category=== 'Sugar Epilation').map((item: {category:string})=> item) },
-    { path: "/asset/img/service9.png", title: "FACIAL", details: servicesApi.result.filter((item: {category:string})=> item.category=== 'Facial').map((item: {category:string})=> item) },
-    { path: "/asset/img/service5.png", title: "MANICURE", details: servicesApi.result.filter((item: {category:string})=> item.category=== 'Manicure').map((item: {category:string})=> item)},
-    { path: "/asset/img/service6.png", title: "PEDICURE", details: servicesApi.result.filter((item: {category:string})=> item.category=== 'Pedicure').map((item: {category:string})=> item) },
-    { path: "/asset/img/service8.png", title: "MASSAGE", details: servicesApi.result.filter((item: {category:string})=> item.category=== 'Massage').map((item: {category:string})=> item) },
-
-
+const services = [
+    { path: "/asset/img/service1.png", title: THREADING.title, details: (servicesApi.result ?? []).filter((item: { category: string }) => item.category === 'Threading').map((item: { category: string }) => item) },
+    { path: "/asset/img/service10.png", title: WAXING.title, details: (servicesApi.result ?? []).filter((item: { category: string }) => item.category === 'Waxing').map((item: { category: string }) => item) },
+    { path: "/asset/img/service3.png", title: "SUGAR EPILATION", details: (servicesApi.result ?? []).filter((item: { category: string }) => item.category === 'Sugar Epilation').map((item: { category: string }) => item) },
+    { path: "/asset/img/service9.png", title: "FACIAL", details: (servicesApi.result ?? []).filter((item: { category: string }) => item.category === 'Facial').map((item: { category: string }) => item) },
+    { path: "/asset/img/service5.png", title: "MANICURE", details: (servicesApi.result ?? []).filter((item: { category: string }) => item.category === 'Manicure').map((item: { category: string }) => item) },
+    { path: "/asset/img/service6.png", title: "PEDICURE", details: (servicesApi.result ?? []).filter((item: { category: string }) => item.category === 'Pedicure').map((item: { category: string }) => item) },
+    { path: "/asset/img/service8.png", title: "MASSAGE", details: (servicesApi.result ?? []).filter((item: { category: string }) => item.category === 'Massage').map((item: { category: string }) => item) },
     // Add more services as needed
-  ];
-  
+];
+
 
 
   return (

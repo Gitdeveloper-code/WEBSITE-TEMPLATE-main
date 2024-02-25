@@ -4,4 +4,4 @@ const jobModel = new mongoose.Schema({
     design:String,
     time:String
 })
-export const Job = mongoose.models.jobs || mongoose.model("jobs",jobModel);
+export const Job = mongoose.models.jobs || mongoose.model("jobs",jobModel); 
