@@ -11,7 +11,7 @@ import { FaFacebook } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className='flexCenter pt-10 bg-cover' style={{ background: "#fff"}}>
-      <div className='padding-container max-container flex w-full flex-col gap-14'>
+      <div className='padding-container max-container flex w-full flex-col gap-7'>
 
         <div className='flex flex-col items-start px-5 justify-center gap-[5%] md:flex-row '>
         <Link href="/" className='mb-10'>
