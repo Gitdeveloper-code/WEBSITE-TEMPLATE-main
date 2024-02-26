@@ -10,7 +10,7 @@ import { FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className='flexCenter pt-10 bg-cover' style={{ backgroundImage: "url('/asset/img/footer1.png')"}}>
+    <footer className='flexCenter pt-10 bg-cover' style={{ background: "#fff"}}>
       <div className='padding-container max-container flex w-full flex-col gap-14'>
 
         <div className='flex flex-col items-start px-5 justify-center gap-[5%] md:flex-row '>
@@ -62,8 +62,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border  border-gray-700" />
-        <p className="regular-14 w-full text-center text-gray-30 pb-3">2023 Fanash Beauty | All rights reserved</p>
+        <div/>
+        <p className="regular-14 w-full text-center text-gray-700 pb-3">2023 Fanash Beauty | All rights reserved</p>
       </div>
     </footer>
   )
