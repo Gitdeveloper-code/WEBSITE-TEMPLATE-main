@@ -34,7 +34,7 @@ const Navbar = () => {
     );
   };
   return (
-    <nav className=" flexBetween max-container pt-4   padding-container relative z-30 bg-transparent">
+    <nav className=" flexBetween max-container pt-4 padding-container fixed top-0 left-0 right-0 z-30 bg-transparent">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-2">
         <div className="relative flex h-16 items-center justify-between">
           {/* <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
