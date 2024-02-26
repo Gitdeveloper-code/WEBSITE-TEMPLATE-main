@@ -241,7 +241,7 @@ async function isConnectedDb() {
               </div>
             </div>
           </div> */}
-          <h1 className="pt-8  text-center text-lg font-semibold uppercase text-tertiary lg:text-4xl"
+          {/* <h1 className="pt-8  text-center text-lg font-semibold uppercase text-tertiary lg:text-4xl"
           > Best Seller</h1>
 
           <div
@@ -317,7 +317,9 @@ async function isConnectedDb() {
               </div>
             </Link>
 
-          </div>
+          </div> */}
+
+
           <section className=" dark:bg-gray-900">
   <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
       <figure className="max-w-screen-md mx-auto">
