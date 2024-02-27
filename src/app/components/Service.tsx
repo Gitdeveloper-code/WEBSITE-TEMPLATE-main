@@ -9,7 +9,7 @@ type ServiceProps={
   details: { name: string; price: string; time: string }[];
 }
 
-export const Service = ({path,title,details,}:ServiceProps) => {
+ const Service = ({path,title,details,}:ServiceProps) => {
   const [isSliderOpen, setSliderOpen] = useState(false);
 
   const openSlider = () => {
@@ -26,14 +26,14 @@ export const Service = ({path,title,details,}:ServiceProps) => {
         setActive(prev => !prev);
       };
   return (
-    <div className="block border-black border-4 transform transition-transform duration-300 hover:scale-110">
+    <div className="block border-white border-4 transform transition-transform duration-300 hover:scale-110">
     <div className="rounded bg-yellow-lighter sm:mt-10 sm:mb-10 md:px-10">
     
 <button
           className={`faq-btn flex w-full text-left`}
          onClick={() => toggleAnswer()}
         >
-          <div className="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg  text-primary dark:bg-white/5">
+          <div className="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg  text-primary dark:bg-white">
             <svg
               className={`fill-black stroke-primary duration-200 ease-in-out  ${
                 active ? "rotate-180" : ""
