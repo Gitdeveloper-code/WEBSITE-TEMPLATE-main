@@ -3,7 +3,7 @@
 export const NAV_LINKS =[
     {href: '/', key:'home', label:'Home'},
     {href: '/about', key:'about', label:'About'},
-    {href: '/service', key:'services', label:'Service'},
+    // {href: '/service', key:'services', label:'Service'},
     {href: '/team', key:'team', label:'Team'},
     {href: '/collection', key:'login', label:'Collection'},
     {href: '/contact', key:'contact', label:'Contact'},
