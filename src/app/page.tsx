@@ -2,6 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link';
 import Script from 'next/script';
 import Hero from './components/Hero';
+import { THREADING, WAXING } from "./constants"
+import Service from "./components/Service"
 import Button from './components/Button';
 import { ConnectionString } from "@/libs/mongodb";
 import mongoose from "mongoose";
@@ -19,6 +21,25 @@ async function connectToDatabase(){
   }
 
 }
+
+const getServices = async () => {
+  try {
+    const response = await fetch("http://localhost:3000/api/services", { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching services:", error);
+    return { res: "Error" };
+  }
+};
+
+
+
 async function isConnectedDb() {
   const isConnected = await connectToDatabase();
   
@@ -29,7 +50,26 @@ async function isConnectedDb() {
       console.log('Failed to connect to the database.');
   }
 }
+
+
+
  const Page = async () => {
+
+  const servicesApi= await getServices()
+  console.log(servicesApi)
+
+const services = [
+    { path: "/asset/img/service1.png", title: THREADING.title, details: (servicesApi.result ?? []).filter((item: { category: string }) => item.category === 'Threading').map((item: { category: string }) => item) },
+    { path: "/asset/img/service10.png", title: WAXING.title, details: (servicesApi.result ?? []).filter((item: { category: string }) => item.category === 'Waxing').map((item: { category: string }) => item) },
+    { path: "/asset/img/service3.png", title: "SUGAR EPILATION", details: (servicesApi.result ?? []).filter((item: { category: string }) => item.category === 'Sugar Epilation').map((item: { category: string }) => item) },
+    { path: "/asset/img/service9.png", title: "FACIAL", details: (servicesApi.result ?? []).filter((item: { category: string }) => item.category === 'Facial').map((item: { category: string }) => item) },
+    { path: "/asset/img/service5.png", title: "MANICURE", details: (servicesApi.result ?? []).filter((item: { category: string }) => item.category === 'Manicure').map((item: { category: string }) => item) },
+    { path: "/asset/img/service6.png", title: "PEDICURE", details: (servicesApi.result ?? []).filter((item: { category: string }) => item.category === 'Pedicure').map((item: { category: string }) => item) },
+    { path: "/asset/img/service8.png", title: "MASSAGE", details: (servicesApi.result ?? []).filter((item: { category: string }) => item.category === 'Massage').map((item: { category: string }) => item) },
+    // Add more services as needed
+];
+
+
   isConnectedDb()
   return (
     <div className="relative cursor-default w-full h-full" >
@@ -241,6 +281,21 @@ async function isConnectedDb() {
               </div>
             </div>
           </div> */}
+
+
+             <h1 className="pt-8  text-center text-lg font-semibold uppercase text-tertiary lg:text-4xl"
+          > Services we Offer </h1>
+
+              <div className=" mx-auto px-12 grid w-full grid-cols-1 gap-10 pb-12 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xl:gap-10">
+
+    
+    {services.map((service, index) => (
+          <Service key={index} path={service.path} title={service.title} details={service.details} />
+        ))}   
+        
+    </div>
+ 
+
           {/* <h1 className="pt-8  text-center text-lg font-semibold uppercase text-tertiary lg:text-4xl"
           > Best Seller</h1>
 
