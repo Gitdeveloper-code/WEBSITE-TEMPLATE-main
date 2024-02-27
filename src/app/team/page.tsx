@@ -3,7 +3,7 @@ import { TeamMembers } from '../components/TeamMembers'
 import Hero from '../components/Hero'
 
 const getJobs= async()=> {
-  let response= await fetch("http://localhost:3000/api/teams", {cache:"no-store"})
+  let response= await fetch("https://fanash-beauty.netlify.app/api/teams", {cache:"no-store"})
   if (!response.ok){
     throw new Error(`HTTP error! Status: ${response.status}`);
     return {res:"Error"}
