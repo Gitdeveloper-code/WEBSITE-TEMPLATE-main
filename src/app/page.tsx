@@ -283,8 +283,6 @@ const services = [
           </div> */}
 
 
-             <h1 className="pt-8  text-center text-lg font-semibold uppercase text-tertiary lg:text-4xl"
-          > Services we Offer </h1>
 
               <div className=" mx-auto px-12 grid w-full grid-cols-1 gap-10 pb-12 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 xl:gap-10">
 
