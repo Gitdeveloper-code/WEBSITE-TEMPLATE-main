@@ -68,12 +68,15 @@ const Navbar = () => {
 
             <div className="flex gap-3 text-tertiary text-4xl">
                 {/* <Logo/> */}
-                <Link href='/login'>
+                {/* <Link href='/login'>
                 <Button
                 title="Login"
                 />
-                </Link>
-               
+                </Link> */}
+     
+                 <Link href='\booking2'>
+                    <Button title="Book Your Slot" icon="/asset/img/calendar.png" />
+                  </Link>              
               <IoIosMenu onClick={toggleSidebar}
 
                className="inline-block cursor-pointer lg:hidden "/>
