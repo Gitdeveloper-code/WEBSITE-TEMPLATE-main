@@ -64,11 +64,10 @@ const Hero = ({ path, height, isVisible, title, description }: HeroProps) => {
                   </Link>
                 </div>
                 <div className="block group-hover:hidden">
-                  <Link href='/login'>
-                <Button
-                title="Login"
-                />
-                </Link> 
+                 
+                <Link href='\booking2'>
+                    <Button title="Book Your Slot" icon="/asset/img/calendar.png" />
+                  </Link>  
                 </div>
              
               </div>

@@ -74,9 +74,11 @@ const Navbar = () => {
                 />
                 </Link> */}
      
-                 <Link href='\booking2'>
-                    <Button title="Book Your Slot" icon="/asset/img/calendar.png" />
-                  </Link>              
+                 <Link href='/login'>
+                <Button
+                title="Login"
+                />
+                </Link>             
               <IoIosMenu onClick={toggleSidebar}
 
                className="inline-block cursor-pointer lg:hidden "/>
