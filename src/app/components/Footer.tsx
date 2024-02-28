@@ -32,32 +32,30 @@ const Footer = () => {
           </FooterColumn>
             {/* Contact */}
             <div className="flex flex-col gap-5 mx-10">
-              <FooterColumn title={FOOTER_CONTACT_INFO.title}>
-               {FOOTER_CONTACT_INFO.links.map((link) => (
-                <Button
-        key={link.label}
-        title={link.label}
-    />
+              <FooterColumn title={FOOTER_CONTACT_INFO.title}>              {FOOTER_CONTACT_INFO.links.map((link) => (
+    <Link href="/contact" key={link.label}>
+      <Button title={link.label} />
+    </Link>
 ))}
 
               </FooterColumn>
             </div>
               {/* Social Icons */}
             <div className="flex flex-col mr-4">
-              <FooterColumn title={SOCIALS.title}>
-                <ul className="text-sm text-gray-30">
-  {SOCIALS.links.map((link, index) => (
-    <Link href="/" key={index}>
-      <li className="flex items-center mb-2">
-        <Image className='' src={link.src} alt="logo" width={15} height={15} /> 
-        <span className="ml-1  text-gray-600">{link.label}</span>
-      </li>
-    </Link>
+  <FooterColumn title={SOCIALS.title}>
+    <ul className="text-sm text-gray-30">
+      {SOCIALS.links.map((link, index) => (
+        <li className="flex items-center mb-2" key={index}>
+          <a href={link.href} className="flex items-center">
+            <Image className='' src={link.src} alt="logo" width={15} height={15} /> 
+            <span className="ml-1 text-gray-600">{link.label}</span>
+          </a>
+        </li>
   ))}
 </ul>
-
               </FooterColumn>
             </div>
+
           
           </div>
         </div>

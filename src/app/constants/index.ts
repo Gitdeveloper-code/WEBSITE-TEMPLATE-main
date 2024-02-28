@@ -37,11 +37,11 @@ export const FOOTER_LINKS =[
   export const SOCIALS = {
     title: 'Social',
     links: [
-      {label: 'Instagram', src:'/asset/img/instagram.png'},
-      {label: 'Facebook', src:'/asset/img/facebook.png'},
-      {label: 'Twitter', src:'/asset/img/twitter.png'},
-      {label: 'Whatsapp', src:'/asset/img/whatsapp.png'},
-      {label: 'LinkedIn', src:'/asset/img/linkedin.png'},
+      {label: 'Instagram', src:'/asset/img/instagram.png',href: '/', key:'instagram'},
+      {label: 'Facebook', src:'/asset/img/facebook.png',href:"https://www.facebook.com/profile.php?id=61551450869435", key:'facebook'},
+      {label: 'Twitter', src:'/asset/img/twitter.png',href: '/', key:'twitter'},
+      {label: 'Whatsapp', src:'/asset/img/whatsapp.png',href:"https://chatwith.io/s/fanash-beauty", key:'whatsapp'},
+      {label: 'LinkedIn', src:'/asset/img/linkedin.png',href: '/', key:'linkedin'},
 
      
     ],
